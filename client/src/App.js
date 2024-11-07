@@ -12,7 +12,7 @@ import { Loading } from "./components";
 
 function Layout() {
   return (
-    <div className="w-full flex flex-col min-h-screen px-4 md:px-10 2xl:px-29=8">
+    <div className="w-full flex flex-col min-h-screen px-4 md:px-10 2xl:px-28">
       {/* navbar */}
       <div>
         <Outlet className="flex-1" />
@@ -23,11 +23,12 @@ function Layout() {
 }
 
 function App() {
-  const theme = "light"
-  const isLoading= false;
+  const theme = "dark";
+  const isLoading = false;
+
   return (
-    <main classname={theme}>
-      <div classname="w-full min-h-screen relative bg-white dark:bg-[#020b19]">
+    <main className={theme}>
+      <div className="w-full min-h-screen relative bg-white dark:bg-[#020b19]">
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
@@ -41,7 +42,7 @@ function App() {
           <Route path="sign-in" element={<LoginPage />} />
         </Routes>
 
-        {isLoading && <Loading/>}
+        {isLoading && <Loading />}
       </div>
     </main>
   );
