@@ -19,14 +19,15 @@ const LoginPage = () => {
     email: "",
     password: "",
   });
+
   const handleChange = (e) => {
-    // const [name, value] = e.target; change to one below
     const { name, value } = e.target;
     setData({
       ...data,
       [name]: value,
     });
   };
+
   return (
     <div className="w-full h-screen flex flex-col md:flex-row">
       {/* Sidebar for larger screens */}
@@ -36,13 +37,13 @@ const LoginPage = () => {
       </div>
 
       {/* Main content area */}
-      <div className="flex flex-1 h-full items-center justify-center bg-white dark:bg-gradient-to-b md:dark:bg-gradient-to-r from-black via-[#434343] to-black px-6 md:px-10 lg:px-20">
-        <div className="w-full flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-1 h-full items-center justify-center bg-white dark:bg-gradient-to-b md:dark:bg-gradient-to-r from-black via-[#434343] to-black px-4 sm:px-6">
+        <div className="w-full flex flex-col items-center justify-center py-12">
           <div className="block mb-10 md:hidden">
             <Logo />
           </div>
 
-          <div className="max-w-md w-full space-y-8">
+          <div className="w-full max-w-md space-y-8">
             <div>
               <h2 className="mt-6 text-center text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white">
                 Sign up to your account
@@ -53,48 +54,50 @@ const LoginPage = () => {
               label="Sign up with Google"
               icon={<FcGoogle />}
               styles="w-full flex items-center justify-center gap-4 bg-white dark:bg-transparent text-black dark:text-white px-5 py-2.5 rounded-full border border-gray-300 shadow-sm hover:bg-gray-100 dark:hover:bg-gray-600"
-              onClick={() => {
-              }}
+              onClick={() => {}}
             />
 
-          <Divider
-          label="or sign up with email"
-          />
+            <Divider label="or sign up with email" />
 
-          <form action="mt-8 sapce-y-6">
-          <InputBox
-                label="name"
+            <form className="mt-8 space-y-6">
+              <InputBox
+                label="Name"
                 name="name"
-                type="name"
+                type="text"
                 isRequired={true}
-                placeholder="name"
+                placeholder="Your name"
                 value={data?.name}
                 onChange={handleChange}
               />
 
-          <InputBox
-                  label='Email Address'
-                  name='email'
-                  type='email'
-                  isRequired={true}
-                  placeholder='email@example.com'
-                  value={data?.email}
-                  onChange={handleChange}
-                />
+              <InputBox
+                label="Email Address"
+                name="email"
+                type="email"
+                isRequired={true}
+                placeholder="email@example.com"
+                value={data?.email}
+                onChange={handleChange}
+              />
 
-                <InputBox
-                  label='Password'
-                  name='password'
-                  type='password'
-                  isRequired={true}
-                  placeholder='Password'
-                  value={data?.password}
-                  onChange={handleChange}
-                />
-          </form>
+              <InputBox
+                label="Password"
+                name="password"
+                type="password"
+                isRequired={true}
+                placeholder="Password"
+                value={data?.password}
+                onChange={handleChange}
+              />
+            </form>
           </div>
-         <span className="text-white"> already have an account? <Link to='/sign-in'className="underline text-white ">Sign-in</Link></span>
 
+          <span className="text-gray-900 dark:text-white mt-4">
+            Already have an account?{" "}
+            <Link to="/sign-in" className="underline text-gray-900 dark:text-white">
+              Sign in
+            </Link>
+          </span>
         </div>
       </div>
 

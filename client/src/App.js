@@ -8,12 +8,14 @@ import {
   SignupPage,
   WriterPage,
 } from "./pages";
-import { Loading } from "./components";
+import { Loading, Navbar } from "./components";
+import useStore from "./store";
 
 function Layout() {
   return (
     <div className="w-full flex flex-col min-h-screen px-4 md:px-10 2xl:px-28">
       {/* navbar */}
+      <Navbar/>
       <div>
         <Outlet className="flex-1" />
       </div>
@@ -23,12 +25,11 @@ function Layout() {
 }
 
 function App() {
-  const theme = "dark";
-  const isLoading = false;
+  const { theme, isLoading } = useStore();
 
   return (
     <main className={theme}>
-      <div className="w-full min-h-screen relative bg-white dark:bg-[#020b19]">
+      <div className="w-full min-h-screen relative bg-white dark:bg-gradient-to-b md:dark:bg-gradient-to-r from-black via-[#2c2c2c] to-black px-6 md:px-10 lg:px-20">
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />

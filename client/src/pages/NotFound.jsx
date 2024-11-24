@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { Button } from '../components'
 
 const NotFound = () => {
   return (
@@ -15,6 +17,12 @@ const NotFound = () => {
       <p className="text-white text-center">
         had its name changed, or is temporarily unavailable.
       </p>
+
+     <Link to="/"> <Button
+              label="Go to home"
+              styles="flex items-center justify-center mt-10 bg-white dark:bg-transparent text-black dark:text-white px-5 py-2.5 rounded-full border border-gray-300 shadow-sm hover:bg-gray-100 dark:hover:bg-gray-600"
+              onClick={() => {}}
+            /></Link>
     </div>
   )
 }
