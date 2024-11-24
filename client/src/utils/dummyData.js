@@ -95,9 +95,9 @@ export const posts = [
       ],
     user: {
       _id: "655ad72bd148ee58ab8d5871",
-      name: "Akwasi Asante",
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/blogwave-4bb76.appspot.com/o/1700452069593FB_IMG_1608124167539-removebg%20(1).png?alt=media&token=c2270464-bc4f-4ec3-8ea7-39ca905621b5",
+      name: "Nitin Kumawat",
+      // image:
+        // "https://firebasestorage.googleapis.com/v0/b/blogwave-4bb76.appspot.com/o/1700452069593FB_IMG_1608124167539-removebg%20(1).png?alt=media&token=c2270464-bc4f-4ec3-8ea7-39ca905621b5",
     },
     comments: ["655ca6965d5a025fa52b60c6", "655ce52bde4a69fbc727abac"],
     status: true,
@@ -140,9 +140,9 @@ export const posts = [
       ],
     user: {
       _id: "655ad72bd148ee58ab8d5871",
-      name: "Akwasi Asante",
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/blogwave-4bb76.appspot.com/o/1700452069593FB_IMG_1608124167539-removebg%20(1).png?alt=media&token=c2270464-bc4f-4ec3-8ea7-39ca905621b5",
+      name: "Nitin Kumawat",
+      // image:
+        // "https://firebasestorage.googleapis.com/v0/b/blogwave-4bb76.appspot.com/o/1700452069593FB_IMG_1608124167539-removebg%20(1).png?alt=media&token=c2270464-bc4f-4ec3-8ea7-39ca905621b5",
     },
     comments: [],
     status: true,
@@ -191,7 +191,7 @@ export const posts = [
       ],
     user: {
       _id: "655ad72bd148ee58ab8d5871",
-      name: "Akwasi Asante",
+      name: "Nitin Kumawat",
       image:
         "https://firebasestorage.googleapis.com/v0/b/blogwave-4bb76.appspot.com/o/1700452069593FB_IMG_1608124167539-removebg%20(1).png?alt=media&token=c2270464-bc4f-4ec3-8ea7-39ca905621b5",
     },
@@ -271,16 +271,16 @@ export const popular = {
   writers: [
     {
       _id: "655ad72bd148ee58ab8d5871",
-      name: "Akwasi Asante",
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/blogwave-4bb76.appspot.com/o/1700452069593FB_IMG_1608124167539-removebg%20(1).png?alt=media&token=c2270464-bc4f-4ec3-8ea7-39ca905621b5",
+      name: "Nitin Kumawat",
+      // image:
+        // "https://firebasestorage.googleapis.com/v0/b/blogwave-4bb76.appspot.com/o/1700452069593FB_IMG_1608124167539-removebg%20(1).png?alt=media&token=c2270464-bc4f-4ec3-8ea7-39ca905621b5",
       followers: 2,
     },
     {
       _id: "655dbc30079fbf7891ad8df3",
-      name: "John F. K. Arthur",
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/blogwave-4bb76.appspot.com/o/1700641801793Akwasi_Asante_young_black_man_official_dress_natural_face_7a23439d-5b0c-461e-aca1-8a841465c7e1.png?alt=media&token=9c46a758-68cf-4124-83bd-7107af2979bf",
+      name: "Vishal Gour",
+      // image:
+      //   "https://firebasestorage.googleapis.com/v0/b/blogwave-4bb76.appspot.com/o/1700641801793Akwasi_Asante_young_black_man_official_dress_natural_face_7a23439d-5b0c-461e-aca1-8a841465c7e1.png?alt=media&token=9c46a758-68cf-4124-83bd-7107af2979bf",
       followers: 0,
     },
   ],
@@ -288,13 +288,12 @@ export const popular = {
 
 export const writer = {
   _id: "655ad72bd148ee58ab8d5871",
-  name: "Akwasi Asante",
-  email: "codewave@gmail.com",
+  name: "Nitin Kumawat",
+  email: "nitin.kumawat.jaipur.in@gmail.com",
   emailVerified: true,
   accountType: "Writer",
-  image:
-    "https://firebasestorage.googleapis.com/v0/b/blogwave-4bb76.appspot.com/o/1700452069593FB_IMG_1608124167539-removebg%20(1).png?alt=media&token=c2270464-bc4f-4ec3-8ea7-39ca905621b5",
-  provider: "Codewave",
+
+  provider: "BlogSite Developer",
   createdAt: "2023-11-20T03:48:59.313Z",
   updatedAt: "2023-11-22T08:31:31.779Z",
   __v: 0,

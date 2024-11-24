@@ -56,7 +56,7 @@ const LoginPage = () => {
               onClick={() => {}}
             />
 
-            <Divider label="or sign in with email" />
+            <Divider label="or sign in with email" className=" text-gray-950 dark:text-white" />
 
             <form action="mt-8 sapce-y-6">
           
@@ -82,7 +82,7 @@ const LoginPage = () => {
             </form>
           </div>
 
-         <span className="text-white"> don't have an account? <Link to='/sign-up'className="underline text-white ">Register</Link></span>
+         <span className=" text-gray-900 dark:text-white"> don't have an account? <Link to='/sign-up'className="underline text-gray-900 dark:text-white">Register</Link></span>
         </div>
       </div>
 

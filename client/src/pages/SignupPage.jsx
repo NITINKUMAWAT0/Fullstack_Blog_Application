@@ -33,7 +33,7 @@ const LoginPage = () => {
       {/* Sidebar for larger screens */}
       <div className="hidden md:flex flex-col gap-y-4 w-1/3 min-h-screen bg-black items-center justify-center p-4">
         <Logo type="login" />
-        <span className="text-xl font-semibold text-white">Welcome back!</span>
+        <span className="text-xl font-semibold text-white">Welcome Buddy!</span>
       </div>
 
       {/* Main content area */}
@@ -59,7 +59,7 @@ const LoginPage = () => {
 
             <Divider label="or sign up with email" />
 
-            <form className="mt-8 space-y-6">
+            <form className="mt-8 space-y-6  text-gray-900 dark:text-white" >
               <InputBox
                 label="Name"
                 name="name"
