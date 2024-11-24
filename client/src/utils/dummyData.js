@@ -107,7 +107,7 @@ export const posts = [
   },
   {
     _id: "655b21192255c0b35d4ab60b",
-    title: "Fullstack Social Media App - Frontend",
+    title: "Fashion Week is Here",
     slug: "fullstack-social-media-app-frontend",
     desc: '<p>Hello coders, welcome to another episode of React project. In this project, we will build and deploy a fully responsive FullStack or MERN Stack Social Media application using MongoDB, ExpressJs, Reactjs, NodeJs, and tailwind css for styling our UI.</p><p style="text-align: start"></p><p style="text-align: start"></p><h1><strong><span style="color: #F03E3E">FULLY </span>RESPONSIVE APP</strong></h1><p></p><p style="text-align: start"></p><p style="text-align: start"></p><h1><strong>Getting Started with Create React App</strong></h1><p></p><p style="text-align: start"></p><p style="text-align: start">This project was bootstrapped with <a target="_blank" rel="noopener noreferrer nofollow" href="https://github.com/facebook/create-react-app"><span style="color: rgb(206, 145, 120)">Create React App</span></a>.</p><p style="text-align: start"></p><p style="text-align: start"></p><h2><strong>Available Scripts</strong></h2><p></p><p style="text-align: start"></p><p style="text-align: start">In the project directory, you can run:</p><p style="text-align: start"></p><p style="text-align: start"></p><h3></h3><p><code>npm start</code></p><p></p><p style="text-align: start"></p><p style="text-align: start">Runs the app in the development mode.</p><p style="text-align: start">Open <a target="_blank" rel="noopener noreferrer nofollow" href="https://github.com/facebook/create-react-app">http://localhost:3000</a> to view it in your browser.</p><p style="text-align: start"></p><p style="text-align: start">The page will reload when you make changes.</p><p style="text-align: start">You may also see any lint errors in the console.</p><p style="text-align: start"></p><p style="text-align: start"></p><h3></h3><p><code>npm test</code></p><p></p><p style="text-align: start"></p><p style="text-align: start">Launches the test runner in the interactive watch mode.</p><p style="text-align: start">See the section about <a target="_blank" rel="noopener noreferrer nofollow" href="https://facebook.github.io/create-react-app/docs/running-tests"><span style="color: rgb(206, 145, 120)">running tests</span></a> for more information.</p>',
     img: "https://marketplace.canva.com/EAE_QiO5WGg/1/0/1600w/canva-monochrome-modern-fashion-weekend-sale-%28poster-%28landscape%29%29-GcnhvtvpClY.jpg",
@@ -260,9 +260,10 @@ export const popular = {
     },
     {
       _id: "655b21192255c0b35d4ab60b",
-      title: "Fullstack Social Media App - Frontend",
+      title: "Fashion Week is Here",
       slug: "fullstack-social-media-app-frontend",
-      img: "",
+    img: "https://marketplace.canva.com/EAE_QiO5WGg/1/0/1600w/canva-monochrome-modern-fashion-weekend-sale-%28poster-%28landscape%29%29-GcnhvtvpClY.jpg",
+      
       cat: "FASHION",
       createdAt: "2023-11-20T09:04:26.018Z",
       views: 23,
