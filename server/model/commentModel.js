@@ -1,22 +1,12 @@
 import mongoose, { Schema } from "mongoose";
 
-const commentSchema = new Schema(
+const commentSchema = new mongoose.Schema(
   {
-    user: {
-      type: Schema.Types.ObjectId,
-      ref: "Users",
-    },
-    post: {
-      type: Schema.Types.ObjectId,
-      red: "Posts",
-    },
-    desc: {
-      type: String,
-    },
+    user: { type: Schema.Types.ObjectId, ref: "Users" },
+    post: { type: Schema.Types.ObjectId, ref: "Posts" },
+    desc: { type: String },
   },
-  {
-    timestamps: true,
-  }
+  { timestamps: true }
 );
 
 const Comments = mongoose.model("Comments", commentSchema);
