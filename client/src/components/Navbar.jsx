@@ -125,9 +125,8 @@ const Navbar = () => {
     signOut();
   };
 
-  console.log(user);
   return (
-    <nav className='flex flex-col md:flex-row w-full py-5  items-center justify-between gap-4 md:gap-0'>
+    <nav className='flex flex-col md:flex-row w-full py-5 items-center justify-between gap-4 md:gap-0'>
       <div className='flex gap-2 text-[20px] md:hidden lg:flex'>
         <Link to='/' className='text-red-600'>
           <FaYoutube />

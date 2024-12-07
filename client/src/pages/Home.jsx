@@ -19,7 +19,6 @@ const Home = () => {
   const handlePageChange = (val) => {
     setPage(val);
 
-    console.log(val);
   };
 
   if (posts?.length < 1)

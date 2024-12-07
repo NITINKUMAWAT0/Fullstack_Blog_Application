@@ -10,4 +10,5 @@ import PopularPosts from './PopularPosts';
 import PopularWriters from './PopularWriters';
 import Navbar from './Navbar';
 import Switch from './Switch'
-export {Loading, Logo, Button, Divider, InputBox, Banner, Card, Pagination, PopularPosts, PopularWriters, Navbar, Switch};
+import PostComments from './PostComments';
+export {Loading, Logo, Button, Divider, InputBox, Banner, Card, Pagination, PopularPosts, PostComments, PopularWriters, Navbar, Switch};
