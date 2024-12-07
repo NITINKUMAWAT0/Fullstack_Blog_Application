@@ -148,4 +148,4 @@ export const login = async (req, res, next) => {
     console.log(error);
     res.status(404).json({ success: "failed", message: error.message });
   }
-};
+};  
