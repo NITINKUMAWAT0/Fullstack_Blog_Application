@@ -8,11 +8,19 @@ dotenv.config();
 const { AUTH_EMAIL, AUTH_PASSWORD } = process.env;
 
 let transporter = nodemailer.createTransport({
-  host: "smtp-mail.outlook.com",
+  service: "gmail", // Using Gmail service
   auth: {
-    user: AUTH_EMAIL,
-    pass: AUTH_PASSWORD,
+    user: AUTH_EMAIL, // Your Gmail email address
+    pass: AUTH_PASSWORD, // Your Gmail app-specific password
   },
+});
+
+transporter.verify((error, success) => {
+  if (error) {
+    console.log("SMTP Server Configuration Error:", error);
+  } else {
+    console.log("SMTP Server is ready to send emails:", success);
+  }
 });
 
 export const sendVerificationEmail = async (user, res, token) => {
@@ -37,7 +45,7 @@ export const sendVerificationEmail = async (user, res, token) => {
     </p>
     <div style="margin-top: 20px;">
         <h5>Regards</h5>
-        <h5>BlogWave</h5>
+        <h5>BlogSite</h5>
     </div>
 </div>`,
   };

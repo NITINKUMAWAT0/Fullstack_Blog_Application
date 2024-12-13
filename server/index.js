@@ -28,12 +28,12 @@ app.use(morgan("dev"));
 app.use("/api/auth", authRoutes);
 
 // Error-handling middleware
-app.use((err, req, res, next) => {
-  res.status(400).json({
-    success: false,
-    message: err.message || "Something went wrong",
-  });
-});
+// app.use((err, req, res, next) => {
+//   res.status(400).json({
+//     success: false,
+//     message: err.message || "Something went wrong",
+//   });
+// });
 
 // Server start
 app.listen(PORT, () => {
