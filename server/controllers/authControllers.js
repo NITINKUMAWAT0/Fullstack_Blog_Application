@@ -1,37 +1,31 @@
-import Users from "../models/userModel.js";
+import Users from "../model/userModel.js";
 import { compareString, createJWT, hashString } from "../utils/index.js";
 import { sendVerificationEmail } from "../utils/sendEmail.js";
 
+
 export const register = async (req, res, next) => {
   try {
-    const {
-      firstName,
-      lastName,
-      email,
-      password,
-      image,
-      accountType,
-      provider,
-    } = req.body;
+    const { firstName, lastName, email, password, image, accountType, provider } = req.body;
 
-    //validate fileds
-    if (!(firstName || lastName || email || password)) {
-      return next("Provide Required Fields!");
+    // Validate required fields
+    if (!(firstName && lastName && email && password)) {
+      return res.status(400).json({ message: "Provide Required Fields!" });
     }
 
-    if (accountType === "Writer" && !image)
-      return next("Please provide profile picture");
+    if (accountType === "Writer" && !image) {
+      return res.status(400).json({ message: "Please provide a profile picture" });
+    }
 
     const userExist = await Users.findOne({ email });
-
     if (userExist) {
-      return next("Email Address already exists. Try Login");
+      return res.status(400).json({ message: "Email Address already exists. Try Login" });
     }
+    console.log(Users);
+    
 
     const hashedPassword = await hashString(password);
-
     const user = await Users.create({
-      name: firstName + " " + lastName,
+      name: `${firstName} ${lastName}`,
       email,
       password: !provider ? hashedPassword : "",
       image,
@@ -40,10 +34,8 @@ export const register = async (req, res, next) => {
     });
 
     user.password = undefined;
-
     const token = createJWT(user?._id);
 
-    //send email verification if account type is writer
     if (accountType === "Writer") {
       sendVerificationEmail(user, res, token);
     } else {
@@ -55,8 +47,8 @@ export const register = async (req, res, next) => {
       });
     }
   } catch (error) {
-    console.log(error);
-    res.status(404).json({ message: error.message });
+    console.error(error);
+    res.status(500).json({ message: "Server Error" });
   }
 };
 
@@ -65,10 +57,8 @@ export const googleSignUp = async (req, res, next) => {
     const { name, email, image, emailVerified } = req.body;
 
     const userExist = await Users.findOne({ email });
-
     if (userExist) {
-      next("Email Address already exists. Try Login");
-      return;
+      return res.status(400).json({ message: "Email Address already exists. Try Login" });
     }
 
     const user = await Users.create({
@@ -80,7 +70,6 @@ export const googleSignUp = async (req, res, next) => {
     });
 
     user.password = undefined;
-
     const token = createJWT(user?._id);
 
     res.status(201).json({
@@ -90,8 +79,8 @@ export const googleSignUp = async (req, res, next) => {
       token,
     });
   } catch (error) {
-    console.log(error);
-    res.status(404).json({ message: error.message });
+    console.error(error);
+    res.status(500).json({ message: "Server Error" });
   }
 };
 
@@ -99,22 +88,17 @@ export const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
 
-    //validation
     if (!email) {
-      return next("Please Provide User Credentials");
+      return res.status(400).json({ message: "Please Provide User Credentials" });
     }
 
-    // find user by email
     const user = await Users.findOne({ email }).select("+password");
-
     if (!user) {
-      return next("Invalid email or password");
+      return res.status(400).json({ message: "Invalid email or password" });
     }
 
-    // Google account signed in
     if (!password && user?.provider === "Google") {
       const token = createJWT(user?._id);
-
       return res.status(201).json({
         success: true,
         message: "Login successfully",
@@ -123,19 +107,16 @@ export const login = async (req, res, next) => {
       });
     }
 
-    // compare password
     const isMatch = await compareString(password, user?.password);
-
     if (!isMatch) {
-      return next("Invalid email or password");
+      return res.status(400).json({ message: "Invalid email or password" });
     }
 
     if (user?.accountType === "Writer" && !user?.emailVerified) {
-      return next("Please verify your email address.");
+      return res.status(400).json({ message: "Please verify your email address." });
     }
 
     user.password = undefined;
-
     const token = createJWT(user?._id);
 
     res.status(201).json({
@@ -145,7 +126,7 @@ export const login = async (req, res, next) => {
       token,
     });
   } catch (error) {
-    console.log(error);
-    res.status(404).json({ success: "failed", message: error.message });
+    console.error(error);
+    res.status(500).json({ message: "Server Error" });
   }
-};  
+};

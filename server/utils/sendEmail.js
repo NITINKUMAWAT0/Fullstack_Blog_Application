@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 import nodemailer from "nodemailer";
-import Verification from "../models/emailVerification.js";
+import Verification from "../model/emailVerification.js";
 import { generateOTP, hashString } from "./index.js";
 
 dotenv.config();

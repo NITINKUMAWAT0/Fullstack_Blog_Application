@@ -8,12 +8,11 @@ const userSchema = new mongoose.Schema(
     accountType: { type: String, default: "User" },
     image: { type: String },
     password: { type: String, select: true },
-    provider: { type: String, default: "Baskar Gour" },
+    provider: { type: String, default: "Custom" },
     followers: [{ type: Schema.Types.ObjectId, ref: "Followers" }],
   },
   { timestamps: true }
 );
 
 const Users = mongoose.model("Users", userSchema);
-
 export default Users;
