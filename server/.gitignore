@@ -1,2 +1,4 @@
 # Environmental File...
 .env
+node_modules/
+.cache/
