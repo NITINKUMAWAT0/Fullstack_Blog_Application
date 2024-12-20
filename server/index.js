@@ -6,6 +6,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 import dbConnection from "./dbConfig/index.js";
 import authRoutes from "./routes/authRoutes.js"; // Add `.js`
+import userRoutes from "./routes/userRoutes.js";
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ app.use(morgan("dev"));
 
 // Routes
 app.use("/api/auth", authRoutes);
+app.use("/api/users", userRoutes);
 
 // Error-handling middleware
 // app.use((err, req, res, next) => {

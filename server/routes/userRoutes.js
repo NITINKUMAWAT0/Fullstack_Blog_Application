@@ -16,7 +16,7 @@ router.post("/resend-link/:id", resendOTP);
 
 // user routes
 router.post("/follower/:id", userAuth, followWritter);
-router.put("/update-user", userAuth, updateUser);
+router.put("/update-user", userAuth, updateUser); 
 
 router.get("/get-user/:id?", getWriter);
 
