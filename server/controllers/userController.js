@@ -1,6 +1,6 @@
-import Verification from "../models/emailVerification.js";
-import Followers from "../models/followersModel.js";
-import Users from "../models/userModel.js";
+import Verification from "../model/emailVerification.js";
+import Followers from "../model/followersModel.js";
+import Users from "../model/userModel.js";
 import { compareString, createJWT } from "../utils/index.js";
 import { sendVerificationEmail } from "../utils/sendEmail.js";
 

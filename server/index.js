@@ -7,6 +7,7 @@ import morgan from "morgan";
 import dbConnection from "./dbConfig/index.js";
 import authRoutes from "./routes/authRoutes.js"; // Add `.js`
 import userRoutes from "./routes/userRoutes.js";
+import loginRoutes from "./routes/authRoutes.js"
 
 dotenv.config();
 
@@ -27,6 +28,7 @@ app.use(morgan("dev"));
 
 // Routes
 app.use("/api/auth", authRoutes);
+app.use("/api/login",loginRoutes)
 app.use("/api/users", userRoutes);
 
 // Error-handling middleware
