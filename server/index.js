@@ -30,7 +30,7 @@ app.use(morgan("dev"));
 app.use("/api/auth", authRoutes);
 app.use("/api/login",loginRoutes)
 app.use("/api/users", userRoutes);
-app.use('./api/admin',admin)
+// app.use('./api/admin',admin)
 
 // Error-handling middleware
 // app.use((err, req, res, next) => {
